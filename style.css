@@ -1,0 +1,61 @@
+.main
+{
+   width: 50px;
+   height: 50px;
+   
+   border: 2px solid grey;
+   float: left;
+}
+#first1
+{
+   position: absolute;
+   left: 50px;
+}
+#first2
+{
+   position: absolute;
+   left: 100px;
+}
+
+#first3
+{
+   position: absolute;
+   top: 50px;
+   
+}
+#first4
+{
+   position: absolute;
+   top: 50px;
+   left: 50px;
+}
+#first5
+{
+   position: absolute;
+   top: 50px;
+   left: 100px;
+}
+#first6
+{
+   position: absolute;
+   top: 100px;
+}
+#first7
+{
+   position: absolute;
+   top: 100px;
+   left: 50px;
+}
+#first8
+{
+   position: absolute;
+   top: 100px;
+   left: 100px;
+}
+#Cross
+{
+   font-size: 34px;
+   position: absolute;
+   
+   left: 14px;
+}
