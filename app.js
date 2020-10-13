@@ -20,11 +20,14 @@ let arr = [];
    arr.push(elem8);
    arr.push(elem9);
 
+   let radioX = document.getElementById('X');
+let radioO = document.getElementById('O');
 
 function getSumbol(id){
 
-
-   let element = document.getElementById(id)
+if(radioX.checked == true){
+   let element = document.getElementById(id);
+   
    for(let i = 0; i < arr.length; i++)
    {
       if(element == arr[i]){
@@ -32,7 +35,9 @@ function getSumbol(id){
          p.innerHTML = 'X';
          p.setAttribute('id', 'Cross');
          element.appendChild(p);
+         
          arr.splice(i, 1);
+         
       }
 
    }
@@ -53,4 +58,43 @@ console.log(item)
    arr.splice(item, 1);
    console.log(arr.length)
 }
+
+
+
+if(radioO.checked == true){
+   let element = document.getElementById(id);
+   
+   for(let i = 0; i < arr.length; i++)
+   {
+      if(element == arr[i]){
+         let p = document.createElement('p');
+         p.innerHTML = 'O';
+         p.setAttribute('id', 'Cross');
+         element.appendChild(p);
+         
+         arr.splice(i, 1);
+         
+      }
+
+   }
+console.log(arr)
+   console.log(arr.length)
+   
+   let item = Math.floor(Math.random() * arr.length);
+   
+console.log(item)
+  
+   let randO = arr[item]
+
+   let p1 = document.createElement('p');
+   p1.innerHTML = 'X';
+   p1.setAttribute('id', 'Cross');
+   randO.appendChild(p1);
+   
+   arr.splice(item, 1);
+   console.log(arr.length)
+}
+
+}
+   
 

@@ -11,10 +11,9 @@
 </head>
 <body>
    
-   
    <div class="cont">
 
-      <div class="main" onclick="getSumbol('first')" id="first"></div>
+      <div class="main" onclick="getSumbol('first')" disabled id="first"></div>
       <div class="main" onclick="getSumbol('first1')" id="first1"></div>
       <div class="main" onclick="getSumbol('first2')" id="first2"></div>
 
@@ -26,7 +25,18 @@
       <div class="main" onclick="getSumbol('first7')" id="first7"></div>
       <div class="main" onclick="getSumbol('first8')" id="first8"></div>
    </div>
+<div id="radio">
+   <input type="radio" name="check" id="X">
+   <label for="X">X</label>
+<br>
+   <input type="radio" name="check" id="O">
+   <label for="O">O</label>
+</div>
+<div>
+   <input type="reset" value="start" id="start">
+</div>
 
+   
    <script src="app.js"></script>
 </body>
 </html>
