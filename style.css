@@ -6,53 +6,53 @@
    border: 2px solid grey;
    float: left;
 }
-#first1
+#f01
 {
    position: absolute;
    left: 50px;
 }
-#first2
+#f02
 {
    position: absolute;
    left: 100px;
 }
 
-#first3
+#f10
 {
    position: absolute;
    top: 50px;
    
 }
-#first4
+#f11
 {
    position: absolute;
    top: 50px;
    left: 50px;
 }
-#first5
+#f12
 {
    position: absolute;
    top: 50px;
    left: 100px;
 }
-#first6
+#f20
 {
    position: absolute;
    top: 100px;
 }
-#first7
+#f21
 {
    position: absolute;
    top: 100px;
    left: 50px;
 }
-#first8
+#f22
 {
    position: absolute;
    top: 100px;
    left: 100px;
 }
-#Cross
+p
 {
    font-size: 34px;
    position: absolute;
@@ -69,6 +69,6 @@
 #start
 {
    position: absolute;
-   top: 250px;
+   top: 2px;
    left: 50px;
 }
