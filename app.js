@@ -94,39 +94,75 @@ function getSymbol(id){
    element.onclick = function(){
       element.setAttribute('disabled', 'disabled')
    }
-   let p = document.createElement('p');
-   element.appendChild(p);
-   if(radioX.checked == true){
-      p.innerHTML = 'X';
-   }
-   if(radioO.checked == true){
-      p.innerHTML = 'O';
-   }
-   
+   let par = document.createElement('p');
+   par.innerHTML = 'X';
+   let par1 = document.createElement('p');
+   par1.innerHTML = 'O';
    let row = +id[1];
    let column = +id[2];
-   arr[row][column] = p;
-   let index = array.findIndex(obj => obj.x == row && obj.y == column);
    
-   array.splice(index, 1);
-   
-   let p1 = document.createElement('p');
    if(radioX.checked == true){
-      p1.innerHTML = 'O';
+      
+      element.appendChild(par);
+      arr[row][column] = par;
    }
    if(radioO.checked == true){
-      p1.innerHTML = 'X';
+      element.appendChild(par1);
+      arr[row][column] = par1;
+   }
+   
+   
+   
+   let index = array.findIndex(obj => obj.x == row && obj.y == column);
+   array.splice(index, 1);
+   if(arr[0][0].innerHTML == "X" && arr[0][1].innerHTML == "X" && arr[0][2].innerHTML == "X" ||
+   arr[1][0].innerHTML == "X" && arr[1][1].innerHTML == "X" && arr[1][2].innerHTML == "X" ||
+   arr[2][0].innerHTML == "X" && arr[2][1].innerHTML == "X" && arr[2][2].innerHTML == "X" ||
+   arr[0][0].innerHTML == "X" && arr[1][1].innerHTML == "X" && arr[2][2].innerHTML == "X" ||
+   arr[0][2].innerHTML == "X" && arr[1][1].innerHTML == "X" && arr[2][0].innerHTML == "X" ||
+   arr[0][0].innerHTML == "X" && arr[1][0].innerHTML == "X" && arr[2][0].innerHTML == "X" ||
+   arr[0][1].innerHTML == "X" && arr[1][1].innerHTML == "X" && arr[2][1].innerHTML == "X" ||
+   arr[0][2].innerHTML == "X" && arr[1][2].innerHTML == "X" && arr[2][2].innerHTML == "X"){
+   alert("Player X won!");
+   
    }
 
+   
    let item = Math.floor(Math.random() * array.length);
    if(array[item] == undefined)
    {
       alert('Good luck next time!!')
    }
-   arr[array[item].x][array[item].y] = p1; 
-   document.getElementById('f' + array[item].x + array[item].y).appendChild(p1);
+    
+   if(radioX.checked == true){
+      arr[array[item].x][array[item].y] = par1;
+      document.getElementById('f' + array[item].x + array[item].y).appendChild(par1);
+   }
+   if(radioO.checked == true){
+      arr[array[item].x][array[item].y] = par;
+      document.getElementById('f' + array[item].x + array[item].y).appendChild(par);
+   }
+   
    
    array.splice(item, 1);
+   if(arr[0][0].innerHTML == "O" && arr[0][1].innerHTML == "O" && arr[0][2].innerHTML == "O" ||
+   arr[1][0].innerHTML == "O" && arr[1][1].innerHTML == "O" && arr[1][2].innerHTML == "O" ||
+   arr[2][0].innerHTML == "O" && arr[2][1].innerHTML == "O" && arr[2][2].innerHTML == "O" ||
+   arr[0][0].innerHTML == "O" && arr[1][1].innerHTML == "O" && arr[2][2].innerHTML == "O" ||
+   arr[0][2].innerHTML == "O" && arr[1][1].innerHTML == "O" && arr[2][0].innerHTML == "O" ||
+   arr[0][0].innerHTML == "O" && arr[1][0].innerHTML == "O" && arr[2][0].innerHTML == "O" ||
+   arr[0][1].innerHTML == "O" && arr[1][1].innerHTML == "O" && arr[2][1].innerHTML == "O" ||
+   arr[0][2].innerHTML == "O" && arr[1][2].innerHTML == "O" && arr[2][2].innerHTML == "O"){
+   alert("Player O won!");
+
+   }
+   console.log(arr)
    }
 
  
+// let arr = [
+//    ['', '', ''],
+//    ['', '', ''],
+//    ['', '', '']
+// ]
+
