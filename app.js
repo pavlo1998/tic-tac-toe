@@ -80,51 +80,53 @@ let arr = [
    ['', '', '']
 ]
 
-function change(elem, x){
-   
-         elem.innerHTML = x;
-      }
-
-function getNumbers(id, array, x, abc){
-   let row = +id[1];
-   let column = +id[2];
-   array[row][column] = x.innerHTML;
-   x.innerHTML = abc;
-}
+let array = 
+   [
+      {x: 0, y: 0}, {x: 0, y: 1}, {x: 0, y: 2},
+      {x: 1, y: 0}, {x: 1, y: 1}, {x: 1, y: 2},
+      {x: 2, y: 0}, {x: 2, y: 1}, {x: 2, y: 2}
+   ]
 
 function getSymbol(id){
-
-   let element = document.getElementById(id);
-   let p = document.createElement('p');
-   let radioX = document.getElementById('X');
    let radioO = document.getElementById('O');
-   for(let i = 0; i < arr.length; i++)
-   {
-      if(element !== arr[i])
-         {
-            
-            if(radioX.checked == true){
-               getNumbers(id, arr, p, 'X')
-               
-            }
-            if(radioO.checked == true){
-               getNumbers(id, arr, p, 'O')
-            }
-            element.appendChild(p);
-         }
+   let radioX = document.getElementById('X');
+   let element = document.getElementById(id);
+   element.onclick = function(){
+      element.setAttribute('disabled', 'disabled')
    }
-   console.log(arr)
-}
+   let p = document.createElement('p');
+   element.appendChild(p);
+   if(radioX.checked == true){
+      p.innerHTML = 'X';
+   }
+   if(radioO.checked == true){
+      p.innerHTML = 'O';
+   }
+   
+   let row = +id[1];
+   let column = +id[2];
+   arr[row][column] = p;
+   let index = array.findIndex(obj => obj.x == row && obj.y == column);
+   
+   array.splice(index, 1);
+   
+   let p1 = document.createElement('p');
+   if(radioX.checked == true){
+      p1.innerHTML = 'O';
+   }
+   if(radioO.checked == true){
+      p1.innerHTML = 'X';
+   }
 
+   let item = Math.floor(Math.random() * array.length);
+   if(array[item] == undefined)
+   {
+      alert('Good luck next time!!')
+   }
+   arr[array[item].x][array[item].y] = p1; 
+   document.getElementById('f' + array[item].x + array[item].y).appendChild(p1);
+   
+   array.splice(item, 1);
+   }
 
-
-
-
-
-
-
-
-
-
-
-
+ 
