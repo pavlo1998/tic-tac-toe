@@ -123,28 +123,9 @@ function getSymbol(id){
    arr[0][0].innerHTML == "X" && arr[1][0].innerHTML == "X" && arr[2][0].innerHTML == "X" ||
    arr[0][1].innerHTML == "X" && arr[1][1].innerHTML == "X" && arr[2][1].innerHTML == "X" ||
    arr[0][2].innerHTML == "X" && arr[1][2].innerHTML == "X" && arr[2][2].innerHTML == "X"){
-   alert("Player X won!");
-   
+      if(alert('Player X won!')){}
+      else window.location.reload(); 
    }
-
-   
-   let item = Math.floor(Math.random() * array.length);
-   if(array[item] == undefined)
-   {
-      alert('Good luck next time!!')
-   }
-    
-   if(radioX.checked == true){
-      arr[array[item].x][array[item].y] = par1;
-      document.getElementById('f' + array[item].x + array[item].y).appendChild(par1);
-   }
-   if(radioO.checked == true){
-      arr[array[item].x][array[item].y] = par;
-      document.getElementById('f' + array[item].x + array[item].y).appendChild(par);
-   }
-   
-   
-   array.splice(item, 1);
    if(arr[0][0].innerHTML == "O" && arr[0][1].innerHTML == "O" && arr[0][2].innerHTML == "O" ||
    arr[1][0].innerHTML == "O" && arr[1][1].innerHTML == "O" && arr[1][2].innerHTML == "O" ||
    arr[2][0].innerHTML == "O" && arr[2][1].innerHTML == "O" && arr[2][2].innerHTML == "O" ||
@@ -153,12 +134,69 @@ function getSymbol(id){
    arr[0][0].innerHTML == "O" && arr[1][0].innerHTML == "O" && arr[2][0].innerHTML == "O" ||
    arr[0][1].innerHTML == "O" && arr[1][1].innerHTML == "O" && arr[2][1].innerHTML == "O" ||
    arr[0][2].innerHTML == "O" && arr[1][2].innerHTML == "O" && arr[2][2].innerHTML == "O"){
-   alert("Player O won!");
-
+   
+   if(alert('Player O won!')){}
+   else window.location.reload(); 
+   
    }
-   console.log(arr)
+   
+
+   radioO.onclick = function(){
+      window.location.reload(); 
+   }
+   radioX.onclick = function(){
+      window.location.reload(); 
+   }
+   console.log(array);
+   let item = Math.floor(Math.random() * array.length);
+   console.log(item);
+   if(array.length == 0)
+   {
+      alert('Good luck next time!')
+      window.location.reload();
+   }
+   else
+   {
+    
+   if(radioX.checked == true){
+      arr[array[item].x][array[item].y] = par1;
+      $(arr[array[item].x][array[item].y]).click(function(){return false;});
+      document.getElementById('f' + array[item].x + array[item].y).appendChild(par1);
+   }
+   if(radioO.checked == true){
+      arr[array[item].x][array[item].y] = par;
+      $(arr[array[item].x][array[item].y]).click(function(){return false;});
+      document.getElementById('f' + array[item].x + array[item].y).appendChild(par);      
    }
 
+   array.splice(item, 1);
+
+   if(arr[0][0].innerHTML == "O" && arr[0][1].innerHTML == "O" && arr[0][2].innerHTML == "O" ||
+   arr[1][0].innerHTML == "O" && arr[1][1].innerHTML == "O" && arr[1][2].innerHTML == "O" ||
+   arr[2][0].innerHTML == "O" && arr[2][1].innerHTML == "O" && arr[2][2].innerHTML == "O" ||
+   arr[0][0].innerHTML == "O" && arr[1][1].innerHTML == "O" && arr[2][2].innerHTML == "O" ||
+   arr[0][2].innerHTML == "O" && arr[1][1].innerHTML == "O" && arr[2][0].innerHTML == "O" ||
+   arr[0][0].innerHTML == "O" && arr[1][0].innerHTML == "O" && arr[2][0].innerHTML == "O" ||
+   arr[0][1].innerHTML == "O" && arr[1][1].innerHTML == "O" && arr[2][1].innerHTML == "O" ||
+   arr[0][2].innerHTML == "O" && arr[1][2].innerHTML == "O" && arr[2][2].innerHTML == "O"){
+   
+   if(alert('Player O won!')){}
+   else window.location.reload(); 
+   
+   }
+   if(arr[0][0].innerHTML == "X" && arr[0][1].innerHTML == "X" && arr[0][2].innerHTML == "X" ||
+   arr[1][0].innerHTML == "X" && arr[1][1].innerHTML == "X" && arr[1][2].innerHTML == "X" ||
+   arr[2][0].innerHTML == "X" && arr[2][1].innerHTML == "X" && arr[2][2].innerHTML == "X" ||
+   arr[0][0].innerHTML == "X" && arr[1][1].innerHTML == "X" && arr[2][2].innerHTML == "X" ||
+   arr[0][2].innerHTML == "X" && arr[1][1].innerHTML == "X" && arr[2][0].innerHTML == "X" ||
+   arr[0][0].innerHTML == "X" && arr[1][0].innerHTML == "X" && arr[2][0].innerHTML == "X" ||
+   arr[0][1].innerHTML == "X" && arr[1][1].innerHTML == "X" && arr[2][1].innerHTML == "X" ||
+   arr[0][2].innerHTML == "X" && arr[1][2].innerHTML == "X" && arr[2][2].innerHTML == "X"){
+      if(alert('Player X won!')){}
+      else window.location.reload(); 
+   }
+}
+}
  
 // let arr = [
 //    ['', '', ''],
